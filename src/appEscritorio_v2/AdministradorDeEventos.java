@@ -20,6 +20,13 @@ public class AdministradorDeEventos implements ActionListener {
 	// Metodos
 	@Override
 	public void actionPerformed(ActionEvent e) {
+		switch (comando) {
+		case "aviso":
+			
+			break;
+		default:
+			break;
+		}
 		if (comando == "aviso") {
 			System.out.println("Se presionó el botón.");
 		}

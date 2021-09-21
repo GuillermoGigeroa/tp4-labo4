@@ -9,6 +9,8 @@ import javax.swing.border.EmptyBorder;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
 import java.awt.GridBagConstraints;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class VentanaEjercicio1 extends JFrame implements Ventana {
 	private static final long serialVersionUID = 1L;
@@ -100,7 +102,16 @@ public class VentanaEjercicio1 extends JFrame implements Ventana {
 		txtFechanac.setColumns(10);
 		
 		btnMostrar = new JButton("Mostrar");
-		btnMostrar.addActionListener(new AdministradorDeEventos(3));
+		btnMostrar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if (txtNombre.getText() == null) {
+					txtNombre.setText("Error");
+				}
+				else {
+					txtNombre.setText("Hola");
+				}
+			}
+		});
 		GridBagConstraints gbc_btnMostrar = new GridBagConstraints();
 		gbc_btnMostrar.anchor = GridBagConstraints.EAST;
 		gbc_btnMostrar.insets = new Insets(0, 0, 5, 0);
